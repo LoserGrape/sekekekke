@@ -1,0 +1,13 @@
+-- Script to force teleport the player to a specific place ID
+
+local placeId = 17290438723  -- Replace with the desired place ID
+
+-- Check if the player is already in the game
+if game:IsLoaded() then
+    -- Teleport the player to the specified place
+    game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+else
+    -- Wait for the game to load, then teleport the player
+    game.Loaded:Wait()
+    game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+end
